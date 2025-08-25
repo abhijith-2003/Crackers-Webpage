@@ -2575,6 +2575,7 @@ body {
     margin: 0 auto;
     overflow: hidden;
     width: 100%;
+    padding: 0 2rem;
 }
 
 .arrival-card {
@@ -2583,7 +2584,7 @@ body {
     border: 1px solid #e0e0e0;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    width: 300px;
+    width: 280px;
     height: 540px;
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -2606,7 +2607,7 @@ body {
 }
 
 .product-image {
-    width: 221.364013671875px;
+    width: 200px;
     height: 286px;
     background: #f8f9fa;
     display: flex;
