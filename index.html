@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crackers</title>
+    <link rel="icon" type="image/png" href="images/Logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800&family=Bricolage+Grotesque:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Delivery Bar -->
+    <div class="delivery-bar">
+        <div class="container">
+            <div class="delivery-content">
+                <i class="fas fa-chevron-left"></i>
+                <div class="delivery-info">
+                    <i class="fas fa-box"></i>
+                    <span>Delivery in 2-4 business days</span>
+                </div>
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-image">
+                        <img src="images/Logo.png" alt="CRACKERS" class="header-logo">
+                    </div>
+                </div>
+                
+                <div class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                
+                <nav class="navigation">
+                    <a href="#" class="nav-link active">Home</a>
+                    <a href="#" class="nav-link">Shop</a>
+                    <a href="#" class="nav-link">About Us</a>
+                    <a href="#" class="nav-link">Safety Tips</a>
+                    <a href="#" class="nav-link">Contact Us</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                    <button class="price-list-btn">Get Price List</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Shopping Cart Panel -->
+    <div class="cart-panel" id="cartPanel">
+                <div class="cart-header">
+            <button class="back-chevron" onclick="toggleCart()">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <h3>My Cart</h3>
+            <div class="header-spacer"></div>
+        </div>
+        
+        <div class="cart-content">
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            
+            <div class="cart-empty" id="cartEmpty">
+                <div class="empty-cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <h4>Your Cart is Empty</h4>
+                <p>Browse products and add to cart to place an order!</p>
+            </div>
+        </div>
+        
+        <div class="cart-footer" id="cartFooter">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-amount">₹0.00</span>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background">
+            <img src="images/bg image.jpg" alt="Bonfire Night Fireworks Display" class="hero-bg-image">
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h2 class="hero-headline">Premium-Grade Fireworks at Factory Prices</h2>
+                <p class="hero-subheadline">Every cracker is safety-checked and quality-certified.</p>
+                <button class="shop-now-btn">SHOP NOW</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scrolling Features Bar -->
+    <div class="scrolling-features-bar">
+        <div class="scrolling-content">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <span class="feature-text">100% Genuine Sivakasi Crackers</span>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <span class="feature-text">Trusted by 50,000+ Families</span>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <span class="feature-text">Pan India Delivery Available</span>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <span class="feature-text">Top-Quality Fireworks Only</span>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <span class="feature-text">Premium Packing Assured</span>
+            </div>
+            
+            <!-- Duplicate items for seamless scrolling -->
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <span class="feature-text">100% Genuine Crackers</span>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <span class="feature-text">Trusted by 50,000+ Families</span>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <span class="feature-text">Pan India Delivery Available</span>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <span class="feature-text">Top-Quality Fireworks Only</span>
+            </div>
+            
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <span class="feature-text">Premium Packing Assured</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fireworks Showcase Section -->
+    <section class="fireworks-showcase">
+        <div class="container">
+            <div class="showcase-header">
+                <h2 class="showcase-title">
+                    <img src="images/walmart.png" alt="Walmart" class="title-icon">
+                    <div class="title-text">
+                        <div class="title-line">Experience</div>
+                        <div class="title-line">Before You Order</div>
+                    </div>
+                    <img src="images/walmart.png" alt="Walmart" class="title-icon">
+                </h2>
+            </div>
+
+            <div class="diwali-lights">
+                <img src="images/diwali lights.png" alt="Diwali Light 1">
+            </div>
+            
+            <div class="diwali-right">
+                <img src="images/diwali right.png" alt="Diwali Right Image">
+            </div>
+            
+            <div class="fireworks-grid">
+                <div class="firework-card">
+                    <div class="firework-image">
+                        <img src="images/095c01caa3d401de942ccec37e44d59b70299671.gif" alt="Sky Shots">
+                        <div class="firework-icon">
+                            <div class="icon-square">
+                                <img src="images/cracker icon 1.png" alt="Icon" class="firework-icon-image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="firework-label">Sky Shots</div>
+                </div>
+                
+                <div class="firework-card">
+                    <div class="firework-image">
+                        <img src="images/d24f4cc5359eff8609db7f34a44d8a946db6db55.gif" alt="Sparklers">
+                        <div class="firework-icon">
+                            <div class="icon-square">
+                                <img src="images/cracker icon 2.png" alt="Icon" class="firework-icon-image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="firework-label">
+                        <div class="firework-label-text">
+                            <div class="icon-square">
+                                <img src="images/cracker icon 2.png" alt="Icon" class="firework-icon-image">
+                            </div>
+                            <span>Sparklers</span>
+                        </div>
+                        <button class="arrow-button">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="firework-card">
+                    <div class="firework-image">
+                        <img src="images/b70d762869abbd397ee4c73a6645fcece10407f3.gif" alt="Rocket">
+                        <div class="firework-icon">
+                            <div class="icon-square">
+                                <img src="images/cracker icon 3.png" alt="Icon" class="firework-icon-image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="firework-label">Rocket</div>
+                </div>
+                
+                <div class="firework-card">
+                    <div class="firework-image">
+                        <img src="images/3672d39aa2f3415f4b3367298c3e01acc3d51c2d (1).gif" alt="Single Shot">
+                        <div class="firework-icon">
+                            <div class="icon-square">
+                                <img src="images/cracker icon 6.png" alt="Icon" class="firework-icon-image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="firework-label">Single Shot</div>
+                </div>
+                
+                <div class="firework-card">
+                    <div class="firework-image">
+                        <img src="images/539d8d2eae97996612d2d748eec41b86fb9fbd8b.gif" alt="Chakkars">
+                        <div class="firework-icon">
+                            <div class="icon-square">
+                                <img src="images/cracker icon 6.png" alt="Icon" class="firework-icon-image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="firework-label">Chakkars</div>
+                </div>
+                
+                <div class="firework-card">
+                    <div class="firework-image">
+                        <img src="images/3b04818ed73d6e50d326fa5af1533480b9945d52.gif" alt="Flower Pots">
+                        <div class="firework-icon">
+                            <div class="icon-square">
+                                <img src="images/cracker icon 5.png" alt="Icon" class="firework-icon-image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="firework-label">Flower Pots</div>
+                </div>
+            </div>
+            
+            <div class="showcase-actions">
+                <button class="view-all-btn">View All</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Wavy Border Divider -->
+    <div class="wavy-divider"></div>
+    
+    <!-- Shop by Collection Section -->
+    <section class="shop-collection">
+        <div class="container">
+            <div class="collection-header">
+                <h2 class="collection-title">
+                    <img src="images/walmart.png" alt="Walmart" class="title-icon">
+                    Shop by Collection
+                    <img src="images/walmart.png" alt="Walmart" class="title-icon">
+                </h2>
+            </div>
+            
+            <div class="collection-grid">
+                <div class="collection-card">
+                    <div class="collection-icon">
+                        <div class="icon-circle">
+                            <img src="images/shop 1.png" alt="Day Time Crackers" class="collection-image">
+                        </div>
+                    </div>
+                    <div class="collection-info">
+                        <h3>Day Time Crackers</h3>
+                        <p>14 products</p>
+                    </div>
+                </div>
+                
+                <div class="collection-card">
+                    <div class="collection-icon">
+                        <div class="icon-circle">
+                            <img src="images/shop 2.png" alt="Night Time Crackers" class="collection-image">
+                        </div>
+                    </div>
+                    <div class="collection-info">
+                        <h3>Night Time Crackers</h3>
+                        <p>250 products</p>
+                    </div>
+                </div>
+                
+                <div class="collection-card">
+                    <div class="collection-icon">
+                        <div class="icon-circle">
+                            <img src="images/shop 5.png" alt="Kids Collection" class="collection-image">
+                        </div>
+                    </div>
+                    <div class="collection-info">
+                        <h3>Kids</h3>
+                        <p>94 products</p>
+                    </div>
+                </div>
+                
+                <div class="collection-card">
+                    <div class="collection-icon">
+                        <div class="icon-circle">
+                            <img src="images/shop 3.png" alt="Family Collection" class="collection-image">
+                        </div>
+                    </div>
+                    <div class="collection-info">
+                        <h3>Family</h3>
+                        <p>110 products</p>
+                    </div>
+                </div>
+                
+                <div class="collection-card">
+                    <div class="collection-icon">
+                        <div class="icon-circle">
+                            <img src="images/shop 4.png" alt="Gift Boxes" class="collection-image">
+                        </div>
+                    </div>
+                    <div class="collection-info">
+                        <h3>Gift Box</h3>
+                        <p>55 products</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="collection-actions">
+                <button class="shop-all-btn">Shop All</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- New Arrivals Section -->
+    <section class="new-arrivals">
+        <div class="container">
+            <div class="arrivals-header">
+                <h2 class="arrivals-title">
+                    <img src="images/walmart.png" alt="Walmart" class="title-icon">
+                    New Arrivals
+                    <img src="images/walmart.png" alt="Walmart" class="title-icon">
+                </h2>
+            </div>
+            
+            <div class="arrivals-grid">
+                <div class="arrival-card">
+                    <div class="discount-badge">70% OFF</div>
+                    <div class="product-image">
+                        <img src="images/product.png" alt="10 CM Crackling Sparklers">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">10 CM Crackling Sparklers</h3>
+                        <p class="product-quantity">[5 BOX] (10 Pcs)</p>
+                        <div class="product-pricing">
+                            <span class="current-price">₹80.00</span>
+                            <span class="original-price">₹400.00</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to cart</button>
+                    </div>
+                </div>
+                
+                <div class="arrival-card">
+                    <div class="discount-badge">70% OFF</div>
+                    <div class="product-image">
+                        <img src="images/product.png" alt="10 CM Crackling Sparklers">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">10 CM Crackling Sparklers</h3>
+                        <p class="product-quantity">[5 BOX] (10 Pcs)</p>
+                        <div class="product-pricing">
+                            <span class="current-price">₹80.00</span>
+                            <span class="original-price">₹400.00</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to cart</button>
+                    </div>
+                </div>
+                
+                <div class="arrival-card">
+                    <div class="discount-badge">70% OFF</div>
+                    <div class="product-image">
+                        <img src="images/product.png" alt="10 CM Crackling Sparklers">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">10 CM Crackling Sparklers</h3>
+                        <p class="product-quantity">[5 BOX] (10 Pcs)</p>
+                        <div class="product-pricing">
+                            <span class="current-price">₹80.00</span>
+                            <span class="original-price">₹400.00</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to cart</button>
+                    </div>
+                </div>
+                
+                <div class="arrival-card">
+                    <div class="discount-badge">70% OFF</div>
+                    <div class="product-image">
+                        <img src="images/product.png" alt="10 CM Crackling Sparklers">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">10 CM Crackling Sparklers</h3>
+                        <p class="product-quantity">[5 BOX] (10 Pcs)</p>
+                        <div class="product-pricing">
+                            <span class="current-price">₹80.00</span>
+                            <span class="original-price">₹400.00</span>
+                        </div>
+                        <button class="add-to-cart-btn">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Trusted Supplier Section -->
+    <section class="trusted-supplier">
+        <div class="supplier-container">
+            <div class="supplier-content">
+                <div class="supplier-info">
+                    <h2 class="supplier-title">
+                        Your Trusted Crackers Supplier
+                    </h2>
+                    <div class="title-separator"></div>
+                    <p class="supplier-description">
+                        From dazzling garlands to sky-filling aerial shots – we make every moment unforgettable.
+                    </p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">
+                                <img src="images/walmart.png" alt="Walmart">
+                                Years of Experience
+                            </span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">250+</span>
+                            <span class="stat-label">
+                                <img src="images/walmart.png" alt="Walmart">
+                                Cracker Types
+                            </span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">
+                                <img src="images/walmart.png" alt="Walmart">
+                                Customer Satisfaction
+                            </span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number">4.9<i class="fas fa-star rating-star"></i></span>
+                            <span class="stat-label">
+                                <img src="images/walmart.png" alt="Walmart">
+                                Customer Ratings
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <button class="explore-collection-btn">Explore Our Collection</button>
+                </div>
+                
+                <div class="family-image-section">
+                    <div class="family-image-container">
+                        <img src="images/11.jpg" alt="Family Celebration with Sparklers">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- RR Crackers Section -->
+    <section class="rr-crackers-section">
+        <div class="rr-container">
+            <div class="rr-content">
+                <div class="store-image-section">
+                    <div class="store-image-container">
+                        <img src="images/22.png" alt="Firecracker Store Interior">
+                    </div>
+                </div>
+                
+                <div class="company-info-section">
+                    <div class="company-info">
+                        <h2 class="company-title">
+                            RR Crackers
+                        </h2>
+                        <p class="company-slogan">
+                            Celebrating Every Moment with Light & Joy.
+                        </p>
+                        <div class="title-separator"></div>
+                        <p class="company-description">
+                            We're proud to be a trusted name in the crackers industry—delivering high-quality firecrackers for every celebration. From flower pots and rockets to sparklers and electric crackers, we offer a wide range of fireworks made with safe, certified materials.
+                        </p>
+                        
+                        <div class="certifications">
+                            <div class="cert-logo">
+                                <img src="images/Screenshot 2025-08-24 193523.png" alt="ISO 9001:2015">
+                            </div>
+                            <div class="cert-logo">
+                                <img src="images/Screenshot 2025-08-24 193537.png" alt="NEERI">
+                            </div>
+                            <div class="cert-logo">
+                                <img src="images/Screenshot 2025-08-24 193549.png" alt="Green Fireworks">
+                            </div>
+                        </div>
+                        
+                        <button class="view-all-btn">View All</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Safety Guide Section -->
+    <section class="safety-guide">
+        <div class="container">
+            <div class="safety-header">
+                <h2 class="safety-title">
+                    <img src="images/walmart.png" alt="Walmart" class="title-icon">
+                    Celebrate with Care
+                    <img src="images/walmart.png" alt="Walmart" class="title-icon">
+                </h2>
+                <p class="safety-subtitle">
+                    Simple steps for a safe, bright, and colorful celebration.
+                </p>
+            </div>
+            
+            <div class="safety-content">
+                <div class="do-column">
+                    <h3 class="do-title">DO</h3>
+                    <div class="safety-card">
+                        <ul class="safety-list">
+                            <li>
+                                <i class="fas fa-fire-extinguisher"></i>
+                                <span>Keep a fire extinguisher nearby</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-eye"></i>
+                                <span>Use protective eyewear</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-fire"></i>
+                                <span>Light one cracker at a time</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-user"></i>
+                                <span>Supervise children closely</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-tint"></i>
+                                <span>Keep a bucket of water nearby</span>
+                            </li>
+                        </ul>
+                        <div class="do-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="dont-column">
+                    <h3 class="dont-title">DON'T</h3>
+                    <div class="safety-card">
+                        <ul class="safety-list">
+                            <li>
+                                <i class="fas fa-home"></i>
+                                <span>Never light crackers indoors</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-hand-paper"></i>
+                                <span>Never hold crackers in your hand</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-redo"></i>
+                                <span>Never relight a dud cracker</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-child"></i>
+                                <span>Never allow children to light crackers </span>
+                            </li>
+                            <li>
+                                <i class="fas fa-wine-glass"></i>
+                                <span>Never light crackers under influence</span>
+                            </li>
+                        </ul>
+                        <div class="dont-icon">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="testimonials-header">
+                <h2 class="testimonials-title">
+                    Over 50,000+ Families Celebrated Safely with RR Crackers
+                </h2>
+            </div>
+            
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="product-link">120 Royal Multi Color Shots</div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="review-text">
+                        "Everything arrived safely and on time! The packing was top-notch, and the crackers were exactly as shown on the website. Loved the sparkler set especially!"
+                    </div>
+                    <div class="reviewer-profile">
+                        <img src="images/profile.jpeg" alt="Rohit M" class="reviewer-image">
+                        <div class="reviewer-info">
+                            <div class="reviewer-name">Rohit M</div>
+                            <div class="reviewer-location">— Coimbatore, Tamil Nadu</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="product-link">Bems GiftBox</div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="review-text">
+                        "Amazing quality and great prices! The combo box had everything and was loud, bright, and safe!"
+                    </div>
+                    <div class="reviewer-profile">
+                        <img src="images/profile.jpeg" alt="Divya" class="reviewer-image">
+                        <div class="reviewer-info">
+                            <div class="reviewer-name">Divya</div>
+                            <div class="reviewer-location">— Mumbai</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="product-link">120 Multicolor Shots with Sparklers</div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="review-text">
+                        "Smooth ordering experience and genuine products. The multicolor shots were a hit with the kids! Will definitely order again."
+                    </div>
+                    <div class="reviewer-profile">
+                        <img src="images/profile.jpeg" alt="Sam" class="reviewer-image">
+                        <div class="reviewer-info">
+                            <div class="reviewer-name">Sam</div>
+                            <div class="reviewer-location">— Bangalore</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation Controls -->
+            <div class="testimonials-navigation">
+                <button class="nav-arrow prev-arrow">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                
+                <div class="nav-dots">
+                    <span class="nav-dot active"></span>
+                    <span class="nav-dot"></span>
+                    <span class="nav-dot"></span>
+                </div>
+                
+                <button class="nav-arrow next-arrow">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted Brands Section -->
+    <section class="trusted-brands-section">
+        <div class="container">
+            <div class="brands-header">
+                <h2 class="brands-title">Trusted Brands We Deal With</h2>
+            </div>
+            
+            <div class="brands-container">
+                <div class="brand-card">
+                    <div class="brand-logo">
+                        <img src="images/88ee98f4ac5cf9590a3a494ce6f645c507c295dd.png" alt="Standard Fireworks" class="brand-image">
+                    </div>
+                </div>
+                
+                <div class="brand-card">
+                    <div class="brand-logo">
+                        <img src="images/ba20ff151abce9c5a3d7dd11f70334e6b35881fe.png" alt="Blue Star Fireworks" class="brand-image">
+                    </div>
+                </div>
+                
+                <div class="brand-card">
+                    <div class="brand-logo">
+                        <img src="images/3106ed64c8e7e6c8f9ba3e3ed906f50a37c73cd3.png" alt="Asok Sparklers" class="brand-image">
+                    </div>
+                </div>
+                
+                <div class="brand-card">
+                    <div class="brand-logo">
+                        <img src="images/9cb7141926cb297b1245f27a69814d28cde4e92f.png" alt="Asian Sparklers" class="brand-image">
+                    </div>
+                </div>
+                
+                <div class="brand-card">
+                    <div class="brand-logo">
+                        <img src="images/9ce8fcb0fe9fca48416a855d4ecc919e563bdcaa.png" alt="Vanitha Fireworks" class="brand-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Benefits Section -->
+    <section class="service-benefits-section">
+        <div class="decorative-line">
+            <div class="line-fade-left"></div>
+            <div class="line-center"></div>
+            <div class="line-fade-right"></div>
+        </div>
+        
+        <div class="container">
+            <div class="benefits-container">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 class="benefit-title">24/7 Call & Order</h3>
+                    <p class="benefit-description">
+                        +91 84380 01669,<br>
+                        +91 74023 53003,<br>
+                        +91 94444 37468
+                    </p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3 class="benefit-title">Pan India Delivery</h3>
+                    <p class="benefit-description">
+                        Express shipping across India,<br>
+                        right to your doorstep.
+                    </p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3 class="benefit-title">Festival Ready Packaging</h3>
+                    <p class="benefit-description">
+                        Beautiful, damage-proof<br>
+                        delivery guaranteed.
+                    </p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="benefit-title">Secure payment</h3>
+                    <p class="benefit-description">
+                        UPI, Credit/Debit Card, Netbanking –<br>
+                        all options accepted.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="footer-content">
+                <!-- QR Code Payment Section -->
+                <div class="footer-column qr-section">
+                    <h3 class="footer-title">Scan to pay</h3>
+                    <div class="phone-number">
+                        <i class="fas fa-copy"></i>
+                        <span>84380 01669</span>
+                    </div>
+                    <div class="qr-code">
+                        <img src="images/QR.png" alt="QR Code for Payment" class="qr-image">
+                    </div>
+                    <button class="download-qr-btn">
+                        <i class="fas fa-download"></i>
+                        Download QR
+                    </button>
+                </div>
+
+                <!-- Company Information -->
+                <div class="footer-column">
+                    <h3 class="footer-title">COMPANY</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Stores</a></li>
+                    </ul>
+                </div>
+
+                <!-- Collections -->
+                <div class="footer-column">
+                    <h3 class="footer-title">COLLECTIONS</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Day Time Crackers</a></li>
+                        <li><a href="#">Night Time Crackers</a></li>
+                        <li><a href="#">Kids Collection</a></li>
+                        <li><a href="#">Gift Boxes</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="footer-column">
+                    <h3 class="footer-title">SUPPORT</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Refund Policy</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Subscribe Section -->
+                <div class="footer-column subscribe-section">
+                    <h3 class="footer-title">SUBSCRIBE TO OUR EMAILS</h3>
+                    <p class="subscribe-description">
+                        Subscribe to receive all our updates and offers, and get a 10% discount on your first purchase.
+                    </p>
+                    <div class="email-subscription">
+                        <input type="email" placeholder="Email" class="email-input">
+                        <button class="subscribe-btn">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <p class="legal-text">
+                        By subscribing you agree to the <a href="#">Terms of Use & Privacy Policy</a>.
+                    </p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
