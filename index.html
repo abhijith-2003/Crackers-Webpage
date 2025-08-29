@@ -30,17 +30,20 @@
     <header class="header">
         <div class="container">
             <div class="header-content">
+                <!-- Mobile Menu Toggle -->
+                <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                
+                <!-- Logo Section -->
                 <div class="logo-section">
                     <div class="logo-image">
                         <img src="images/Logo.png" alt="CRACKERS" class="header-logo">
                     </div>
                 </div>
                 
-                <div class="mobile-menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
-                
-                <nav class="navigation">
+                <!-- Desktop Navigation -->
+                <nav class="navigation" id="navigation">
                     <a href="#" class="nav-link active">Home</a>
                     <a href="#" class="nav-link">Shop</a>
                     <a href="#" class="nav-link">About Us</a>
@@ -48,6 +51,7 @@
                     <a href="#" class="nav-link">Contact Us</a>
                 </nav>
                 
+                <!-- Header Actions -->
                 <div class="header-actions">
                     <div class="search-icon">
                         <i class="fas fa-search"></i>
@@ -97,6 +101,9 @@
 
     <!-- Cart Overlay -->
     <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
 
     <!-- Hero Section -->
     <section class="hero-section">

@@ -1,3 +1,79 @@
+// Mobile Menu Management
+class MobileMenu {
+    constructor() {
+        this.mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        this.navigation = document.getElementById('navigation');
+        this.mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+        this.isOpen = false;
+        this.init();
+    }
+
+    init() {
+        this.setupEventListeners();
+    }
+
+    setupEventListeners() {
+        if (this.mobileMenuToggle) {
+            this.mobileMenuToggle.addEventListener('click', () => {
+                this.toggleMenu();
+            });
+        }
+
+        // Close menu when clicking on nav links
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                this.closeMenu();
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!this.mobileMenuToggle.contains(e.target) && !this.navigation.contains(e.target)) {
+                this.closeMenu();
+            }
+        });
+        
+        // Close menu when clicking overlay
+        if (this.mobileMenuOverlay) {
+            this.mobileMenuOverlay.addEventListener('click', () => {
+                this.closeMenu();
+            });
+        }
+
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                this.closeMenu();
+            }
+        });
+    }
+
+    toggleMenu() {
+        this.isOpen = !this.isOpen;
+        if (this.isOpen) {
+            this.openMenu();
+        } else {
+            this.closeMenu();
+        }
+    }
+
+    openMenu() {
+        this.navigation.classList.add('active');
+        this.mobileMenuOverlay.classList.add('active');
+        this.mobileMenuToggle.innerHTML = '<i class="fas fa-times"></i>';
+        document.body.style.overflow = 'hidden';
+    }
+
+    closeMenu() {
+        this.navigation.classList.remove('active');
+        this.mobileMenuOverlay.classList.remove('active');
+        this.mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        document.body.style.overflow = '';
+        this.isOpen = false;
+    }
+}
+
 // Cart Management System
 class ShoppingCart {
     constructor() {
@@ -436,10 +512,13 @@ class ShoppingCart {
 
 // Initialize cart when DOM is loaded
 let cart;
+let mobileMenu;
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM loaded, initializing cart');
+    console.log('DOM loaded, initializing cart and mobile menu');
     cart = new ShoppingCart();
+    mobileMenu = new MobileMenu();
     console.log('Cart initialized:', cart);
+    console.log('Mobile menu initialized:', mobileMenu);
 });
 
 // Global functions for onclick handlers
